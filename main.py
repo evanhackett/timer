@@ -1,8 +1,10 @@
 import argparse
+import os
 import sys
 import time
 
 from playsound import playsound
+
 
 def pad(n: int):
     return f'{n:02}'
@@ -29,5 +31,6 @@ if __name__ == "__main__":
         sys.stdout.flush()
 
 
-    print('Timer finished!')
-    playsound('alarm.mp3')
+    print('\nTimer finished!')
+    sound_file_path = os.path.join(os.path.abspath(os.path.dirname(__file__)), 'alarm.mp3')
+    playsound(sound_file_path)
